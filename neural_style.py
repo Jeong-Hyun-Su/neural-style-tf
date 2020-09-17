@@ -17,22 +17,21 @@ def parse_args():
   parser = argparse.ArgumentParser(description=desc)
 
   # options for single image
-  parser.add_argument('--verbose', action='store_true',
+  parser.add_argument('--verbose', action='store_true', default=True,
     help='Boolean flag indicating if statements should be printed to the console.')
 
   parser.add_argument('--img_name', type=str, 
     default='result',
     help='Filename of the output image.')
 
-  parser.add_argument('--style_imgs', nargs='+', type=str,
-    help='Filenames of the style images (example: starry-night.jpg)', 
-    required=True)
+  parser.add_argument('--style_imgs', nargs='+', type=str, default="styles.png",
+    help='Filenames of the style images (example: starry-night.jpg)')
   
   parser.add_argument('--style_imgs_weights', nargs='+', type=float,
     default=[1.0],
     help='Interpolation weights of each of the style images. (example: 0.5 0.5)')
   
-  parser.add_argument('--content_img', type=str,
+  parser.add_argument('--content_img', type=str, default="input.png",
     help='Filename of the content image (example: lion.jpg)')
 
   parser.add_argument('--style_imgs_dir', type=str,
@@ -146,7 +145,7 @@ def parse_args():
     help='Learning rate parameter for the Adam optimizer. (default: %(default)s)')
   
   parser.add_argument('--max_iterations', type=int, 
-    default=1000,
+    default=500,
     help='Max number of iterations for the Adam or L-BFGS optimizer. (default: %(default)s)')
 
   parser.add_argument('--print_iterations', type=int, 
@@ -251,7 +250,7 @@ def build_model(input_img):
   
   net['pool1']   = pool_layer('pool1', net['relu1_2'])
 
-  if args.verbose: print('LAYER GROUP 2')  
+  if args.verbose: print('LAYER GROUP 2')
   net['conv2_1'] = conv_layer('conv2_1', net['pool1'], W=get_weights(vgg_layers, 5))
   net['relu2_1'] = relu_layer('relu2_1', net['conv2_1'], b=get_bias(vgg_layers, 5))
   
@@ -309,25 +308,25 @@ def build_model(input_img):
 
 def conv_layer(layer_name, layer_input, W):
   conv = tf.nn.conv2d(layer_input, W, strides=[1, 1, 1, 1], padding='SAME')
-  if args.verbose: print('--{} | shape={} | weights_shape={}'.format(layer_name, 
+  if args.verbose: print('--{} | shape={} | weights_shape={}'.format(layer_name,
     conv.get_shape(), W.get_shape()))
   return conv
 
 def relu_layer(layer_name, layer_input, b):
   relu = tf.nn.relu(layer_input + b)
-  if args.verbose: 
-    print('--{} | shape={} | bias_shape={}'.format(layer_name, relu.get_shape(), 
+  if args.verbose:
+    print('--{} | shape={} | bias_shape={}'.format(layer_name, relu.get_shape(),
       b.get_shape()))
   return relu
 
 def pool_layer(layer_name, layer_input):
   if args.pooling_type == 'avg':
-    pool = tf.nn.avg_pool(layer_input, ksize=[1, 2, 2, 1], 
+    pool = tf.nn.avg_pool(layer_input, ksize=[1, 2, 2, 1],
       strides=[1, 2, 2, 1], padding='SAME')
   elif args.pooling_type == 'max':
-    pool = tf.nn.max_pool(layer_input, ksize=[1, 2, 2, 1], 
+    pool = tf.nn.max_pool(layer_input, ksize=[1, 2, 2, 1],
       strides=[1, 2, 2, 1], padding='SAME')
-  if args.verbose: 
+  if args.verbose:
     print('--{}   | shape={}'.format(layer_name, pool.get_shape()))
   return pool
 
@@ -721,15 +720,17 @@ def get_content_image(content_img):
 def get_style_images(content_img):
   _, ch, cw, cd = content_img.shape
   style_imgs = []
-  for style_fn in args.style_imgs:
-    path = os.path.join(args.style_imgs_dir, style_fn)
-    # bgr image
-    img = cv2.imread(path, cv2.IMREAD_COLOR)
-    check_image(img, path)
-    img = img.astype(np.float32)
-    img = cv2.resize(img, dsize=(cw, ch), interpolation=cv2.INTER_AREA)
-    img = preprocess(img)
-    style_imgs.append(img)
+  style_fn = "styles.png"
+  # for style_fn in args.style_imgs:
+  path = os.path.join(args.style_imgs_dir, style_fn)
+  # bgr image
+  img = cv2.imread(path, cv2.IMREAD_COLOR)
+  check_image(img, path)
+  img = img.astype(np.float32)
+  img = cv2.resize(img, dsize=(cw, ch), interpolation=cv2.INTER_AREA)
+  img = preprocess(img)
+  style_imgs.append(img)
+
   return style_imgs
 
 def get_noise_image(noise_ratio, content_img):
@@ -848,11 +849,12 @@ def render_video():
         tock = time.time()
         print('Frame {} elapsed time: {}'.format(frame, tock - tick))
 
-def main():
+
+def start(ranges):
   global args
   args = parse_args()
+  args.max_iterations = ranges;
+
   if args.video: render_video()
   else: render_single_image()
 
-if __name__ == '__main__':
-  main()
