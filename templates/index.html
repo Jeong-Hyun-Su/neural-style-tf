@@ -147,16 +147,14 @@
 							
 							<div class="col-12">
 								<a>Quality(L &nbsp;&nbsp;↔&nbsp;&nbsp; H)</a><br>
-								<input type="range" min="300" max="900" step="150" list="steplist" id="range">
-								<datalist id="steplist" style="--list-length: 5;">
-									<option label="1"></option>
-									<option label="2"></option>
-									<option label="3"></option>
-									<option label="4"></option>
-									<option label="5"></option>
+								<input type="range" min="100" max="500" step="200" list="steplist" id="range">
+								<datalist id="steplist" style="--list-length: 3;">
+									<option label="L"></option>
+									<option label="M"></option>
+									<option label="H"></option>
 								</datalist>
 								<ul class="actions">
-									<li><input type="submit" class="button icon solid fa-file" value="Submit" onclick="formSend();"></li>
+									<li><input type="submit" class="button icon solid fa-file submit" value="Submit" onclick="formSend();"></li>
 								</ul>
 							</div>
 						</div>
