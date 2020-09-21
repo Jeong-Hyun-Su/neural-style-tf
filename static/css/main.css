@@ -60,6 +60,108 @@ mark {
 	background-color: transparent;
 	color: inherit;
 }
+
+/** BEGIN CSS **/
+.loading {
+
+		margin-left: auto;
+		margin-right: auto;
+		height: 58px;
+		width: 150px;
+		-moz-transition: all 0.25s ease-in-out;
+		-webkit-transition: all 0.25s ease-in-out;
+		-ms-transition: all 0.25s ease-in-out;
+		transition: all 0.25s ease-in-out;
+		-webkit-appearance: none;
+		position: relative;
+		background: #ed786a;
+		color: #fff !important;
+		text-transform: uppercase;
+		border-radius: 4px;
+		border: 0;
+		outline: 0;
+		font-size: 1em;
+		box-shadow: 0.125em 0.175em 0 0 rgba(0, 0, 0, 0.125);
+		font-weight: 600;
+		text-align: center;
+		font-size: 0.85em;
+		letter-spacing: 2px;
+		padding: 0.85em 2.75em 0.85em 2.75em;
+}
+
+.loading.icon:before {
+	position: relative;
+	padding-right: 0.75em;
+	opacity: 0.5;
+	top: 0.05em;
+}
+
+.loading:hover {
+	background: #fd887a;
+}
+
+.loader2{
+    position: relative;
+    width: 5px;
+    height: 5px;
+
+    top: 49%;
+    top: -webkit-calc(50% - 43px);
+    top: calc(50% - 1.5px);
+    left: 49%;
+    left: -webkit-calc(50% - 43px);
+    left: calc(50% - 1.5px);
+
+    background-color: #fff;
+    border-radius: 50px;
+}
+
+.loader2:before{
+    content: "";
+    position: absolute;
+    top: -28px;
+    border-top: 3px solid #fff;
+    border-right: 3px solid #fff;
+    border-radius: 0 50px 0px  0;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(255, 255, 255, .1);
+    -webkit-transform-origin:  0% 100%;
+            transform-origin:  0% 100% ;
+    -webkit-animation: loader2 1.5s linear infinite;
+            animation: loader2 1.5s linear infinite;
+}
+
+.loader2:after{
+    content: "";
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    border-bottom: 3px solid #fff;
+    border-left: 3px solid #fff;
+    border-radius: 0 0px 0px  50px;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(255, 255, 255, .1);
+    -webkit-transform-origin:  100% 0%;
+            transform-origin:  100% 0% ;
+    -webkit-animation: loader2 1.5s linear infinite;
+            animation: loader2 1.5s linear infinite;
+}
+
+
+
+@-webkit-keyframes loader2{
+    0%{-webkit-transform:rotate(0deg);}
+    100%{-webkit-transform:rotate(360deg);}
+}
+
+@keyframes loader2{
+    0%{transform:rotate(0deg);}
+    100%{transform:rotate(360deg);}
+}
+
+
 /* button */
 .inputfile {
     width: 0.1px;
@@ -1854,10 +1956,10 @@ input[type=range] + datalist option:last-child {
 /* Button */
 
 	input[type="button"],
-	input[type="submit"],
 	input[type="reset"],
 	button,
 	.button {
+		width: 150px;
 		-moz-transition: all 0.25s ease-in-out;
 		-webkit-transition: all 0.25s ease-in-out;
 		-ms-transition: all 0.25s ease-in-out;
@@ -1881,7 +1983,6 @@ input[type=range] + datalist option:last-child {
 	}
 
 		input[type="button"].icon:before,
-		input[type="submit"].icon:before,
 		input[type="reset"].icon:before,
 		button.icon:before,
 		.button.icon:before {
@@ -1892,7 +1993,6 @@ input[type=range] + datalist option:last-child {
 		}
 
 		input[type="button"]:hover,
-		input[type="submit"]:hover,
 		input[type="reset"]:hover,
 		button:hover,
 		.button:hover {
@@ -1900,7 +2000,6 @@ input[type=range] + datalist option:last-child {
 		}
 
 		input[type="button"]:active,
-		input[type="submit"]:active,
 		input[type="reset"]:active,
 		button:active,
 		.button:active {
@@ -1908,15 +2007,13 @@ input[type=range] + datalist option:last-child {
 		}
 
 		input[type="button"].alt,
-		input[type="submit"].alt,
 		input[type="reset"].alt,
 		button.alt,
 		.button.alt {
 			background: #878787;
 		}
 
-			input[type="button"].alt:hover,
-			input[type="submit"].alt:hover,
+			input[type="button"].alt:hover,=
 			input[type="reset"].alt:hover,
 			button.alt:hover,
 			.button.alt:hover {
@@ -1924,7 +2021,6 @@ input[type=range] + datalist option:last-child {
 			}
 
 			input[type="button"].alt:active,
-			input[type="submit"].alt:active,
 			input[type="reset"].alt:active,
 			button.alt:active,
 			.button.alt:active {

@@ -14,7 +14,20 @@ function formSend() {
     const content = document.getElementById('file-1').files[0];
     const style = document.getElementById('file-2').files[0];
 	const range = document.getElementById("range").value;
-	console.log(range);
+
+	if(content == null){
+		alert("Input the Content Image");
+		return;
+	}
+	else if(style == null){
+		alert("Input the Style Image");
+		return;
+	}
+
+	document.getElementsByClassName('button')[1].style.display = "none";
+	document.getElementsByClassName('loading')[0].style.display = "block";
+
+
     formData.append("content", content);
 	formData.append("style", style);
 	formData.append("range", range);
@@ -37,6 +50,9 @@ function formSend() {
     .then(response => response.blob())
     .then(blob => URL.createObjectURL(blob))
     .then(imageURL => {
+    	document.getElementsByClassName('button')[1].style.display = "block";
+		document.getElementsByClassName('loading')[0].style.display = "none";
+
         document.getElementById("results").setAttribute("src", imageURL);
     })
     .catch(e =>{
