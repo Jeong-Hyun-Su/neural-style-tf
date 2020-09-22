@@ -548,6 +548,7 @@ def check_image(img, path):
 def stylize(content_img, style_imgs, init_img, frame=None):
   with tf.device(args.device), tf.Session() as sess:
     # setup network
+    print("Build Model!!")
     net = build_model(content_img)
     
     # style loss
@@ -578,6 +579,7 @@ def stylize(content_img, style_imgs, init_img, frame=None):
       L_temporal = sum_shortterm_temporal_losses(sess, net, frame, init_img)
       L_total   += gamma * L_temporal
 
+    print("Optimizer!!")
     # optimization algorithm
     optimizer = get_optimizer(L_total)
 
@@ -585,7 +587,8 @@ def stylize(content_img, style_imgs, init_img, frame=None):
       minimize_with_adam(sess, net, optimizer, init_img, L_total)
     elif args.optimizer == 'lbfgs':
       minimize_with_lbfgs(sess, net, optimizer, init_img)
-    
+
+    print("Sess Run!!")
     output_img = sess.run(net['input'])
     
     if args.original_colors:
@@ -816,6 +819,7 @@ def convert_to_original_colors(content_img, stylized_img):
   return dst
 
 def render_single_image():
+  print("Render Start!!")
   content_img = get_content_image(args.content_img)
   style_imgs = get_style_images(content_img)
   with tf.Graph().as_default():

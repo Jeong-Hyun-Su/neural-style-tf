@@ -50,8 +50,9 @@ def run(content, style, ranges):
     content.save(content_dir)
     style.save(style_dir)
 
+    print("Start!!")
     start(ranges)
-
+    print("Finish!!")
     # 사진 체크 후 삭제
     if os.path.isfile(content_dir):
         os.remove(content_dir)
@@ -84,11 +85,12 @@ def neural():
         style = request.files['style']
         ranges = int(request.form['range'])
 
-        print(ranges)
-
     except Exception:
         print("error : not contain image")
         return Response("fail", status=400)
+
+
+    print("Range: {}".format(ranges))
 
     # Queue - put data
     req = {
@@ -99,9 +101,11 @@ def neural():
     # Queue - wait & check
     while 'output' not in req:
         time.sleep(CHECK_INTERVAL)
-
     # Get Result & Send Image
     byte_io = req['output']
+
+    print("Send!!")
+
     return send_file(byte_io, mimetype="image/png")
 
 
