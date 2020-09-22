@@ -50,9 +50,9 @@ def run(content, style, ranges):
     content.save(content_dir)
     style.save(style_dir)
 
-    print("Start!!")
+    # 변환 시작
     start(ranges)
-    print("Finish!!")
+
     # 사진 체크 후 삭제
     if os.path.isfile(content_dir):
         os.remove(content_dir)
@@ -83,14 +83,21 @@ def neural():
     try:
         content = request.files['content']
         style = request.files['style']
-        ranges = int(request.form['range'])
+        ranges = request.form['range']
+
+        # Swagger API range외 선택에 대한 예
+        if ranges == "Low":
+            ranges = 100
+        elif ranges == "Medium":
+            ranges = 250
+        elif ranges == "High":
+            ranges = 400
+        else:
+            ranges = int(ranges)
 
     except Exception:
         print("error : not contain image")
         return Response("fail", status=400)
-
-
-    print("Range: {}".format(ranges))
 
     # Queue - put data
     req = {
@@ -103,8 +110,6 @@ def neural():
         time.sleep(CHECK_INTERVAL)
     # Get Result & Send Image
     byte_io = req['output']
-
-    print("Send!!")
 
     return send_file(byte_io, mimetype="image/png")
 

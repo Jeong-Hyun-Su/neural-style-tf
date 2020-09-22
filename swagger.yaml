@@ -1,0 +1,57 @@
+openapi: 3.0.1
+
+info:
+  title: Ainize-Neural-Style
+  description: |
+    By combining the style image with the original image, It creates a new feeling image.
+    ---
+      How to use:
+      1.  Choose the Original Image and the Style Image.
+      2.  Select the Quality.
+      3.  Press the Execute button and wait for the result.
+
+  contact:
+    name: Ainizer - HyunSu Jeong
+  version: "0.1"
+
+servers:
+  - url: https://master-neural-style-tf-jeong-hyun-su.endpoint.ainize.ai
+
+paths:
+  /neural:
+    post:
+      requestBody:
+        required: true
+        description: "We create a new image by combining two photos."
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                range:
+                  type: string
+                  enum: ["Low", "Medium", "High"]
+                content:
+                  type: string
+                  format: binary
+                style:
+                  type: string
+                  format: binary
+            encoding:
+              files:
+                contentType: image/*
+
+      responses:
+        '200':
+          description: success
+          content:
+            image/jpg:
+              schema:
+                type: string
+                format: binary
+
+        '400':
+          description: Bad Request
+
+        '500':
+          description: Server side error
