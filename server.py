@@ -87,11 +87,20 @@ def neural():
     try:
         content = request.files['content']
         style = request.files['style']
-        ranges = int(request.form['range'])
+        ranges = request.form['range']
 
     except Exception:
         print("error : not contain image")
         return Response("fail", status=400)
+
+    if ranges == "Low":
+        ranges = 50
+    elif ranges == "Medium":
+        ranges = 100
+    elif ranges == "High":
+        ranges = 150
+    else:
+        ranges = int(ranges)
 
     # Queue - put data
     req = {
