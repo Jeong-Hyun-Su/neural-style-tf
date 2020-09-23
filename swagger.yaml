@@ -29,8 +29,9 @@ paths:
               type: object
               properties:
                 range:
-                  type: string
-                  enum: ["Low", "Medium", "High"]
+                  type: integer
+                  description: "The higher the number, the higher the quality and time. (40sec ~ 2min)"
+                  enum: [ 1, 2, 3, 4, 5 ]
                 content:
                   type: string
                   format: binary
