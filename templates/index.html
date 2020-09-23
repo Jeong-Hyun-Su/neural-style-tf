@@ -15,11 +15,9 @@
 	<body class="homepage is-preload">
 		
 		<div id="page-wrapper">
-				
 			<!-- Header -->
 				<section id="header">
 					<div class="container">
-
 						<!-- Logo -->
 							<h1 id="logo">Neural Style</h1>
 							<p>We create a new image by combining two photos.</p>
@@ -61,7 +59,6 @@
 
 										<ul class="divided">
 											<li>
-
 												<!-- Highlight -->
 													<article class="box highlight" style="margin-top: 170px;">
 														<header>
@@ -79,7 +76,7 @@
 													3.&nbsp;&nbsp;Select the quality with the track bar.<br><br>
 													4.&nbsp;&nbsp;Just press the Neural button and wait.</p>
 
-													<a href="#contents" class="button icon" style="height: 50px; width: 180px; text-align: center;">Go to Use.</a>
+													<a href="#contents" class="button icon" style="height: 50px; width: 180px; text-align: center; font-size: 15px;">Go to Use</a>
 
 											</li>
 											<li>
@@ -113,14 +110,7 @@
 				<!-- Features -->
 				<section id="features">
 					<div class="container" >
-								<header>
-									<h2>Result</h2>
-								</header>
-								<section>
-									<img src="../static/images/pic01.jpg" alt="" style="width: 68%; margin-left: auto; margin-right: auto;" id="results"/>
-								</section>
-
-
+							
 						<div class="row aln-center">
 							<div class="col-4 col-6-medium col-12-small">
 								<!-- Feature -->
@@ -152,13 +142,17 @@
 
 						<br>
 						<div class="col-12">
-							<a>Quality(L &nbsp;&nbsp;↔&nbsp;&nbsp; H)</a><br>
-							<input type="range" min="50" max="150" step="50" list="steplist" id="range">
-							<datalist id="steplist" style="--list-length: 3;">
-								<option label="L"></option>
-								<option label="M"></option>
-								<option label="H"></option>
+							<a>Quality(L &nbsp;&nbsp;↔&nbsp;&nbsp; H)</a><br><br>
+							<input type="range" min="50" max="650" step="150" list="steplist" id="range">
+							<datalist id="steplist" style="--list-length: 5;">
+								<option label="1"></option>
+								<option label="2"></option>
+								<option label="3"></option>
+								<option label="4"></option>
+								<option label="5"></option>
 							</datalist>
+							<div style="margin-bottom: 20px;">40sec &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;2min</div>
+							
 							<div>
 								<center><input type="submit" class="button icon solid fa-file submit" value="Submit" onclick="formSend();"></center>
 								<center><div class="loading" style="display: none;">
@@ -166,6 +160,12 @@
 								</div></center>
 							</div>
 						</div>
+						<header style="margin-top: 10%;">
+							<h2>Result</h2>
+						</header>
+						<section>
+							<img src="../static/images/pic01.jpg" alt="" style="width: 68%; margin-left: auto; margin-right: auto;" id="results"/>
+						</section>
 					</div>
 				</section>
 

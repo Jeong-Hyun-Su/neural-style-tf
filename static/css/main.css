@@ -247,26 +247,27 @@ input[type=range] {
 	-webkit-appearance: inherit;
 	border: #ed786a;
 	border-style: solid;
-    width: 10%;
-    max-width:10%;
+    width: 15%;
+    max-width:15%;
     margin-left: 0;
 }
 /* style datalist */
 input[type=range] + datalist {
     display: block;
-    margin-top: -4px;
+	margin-top: -65px;
+	margin-bottom: 30px;
 }
 input[type=range] + datalist option {
     display: inline-block;
-    width: calc((10% - 12px) / (var(--list-length) - 1));
+    width: calc((15% - 12px) / (var(--list-length) - 1));
     text-align: center;
 }
 input[type=range] + datalist option:first-child {
-    width: calc((10% - 12px) / ((var(--list-length) - 1) * 2) + 6px);
+    width: calc((15% - 12px) / ((var(--list-length) - 1) * 2) + 6px);
     text-align: left;
 }
 input[type=range] + datalist option:last-child {
-    width: calc((10% - 12px) / ((var(--list-length) - 1) * 2) + 6px);
+    width: calc((15% - 12px) / ((var(--list-length) - 1) * 2) + 6px);
     text-align: right;
 }
 
@@ -319,7 +320,7 @@ input[type=range] + datalist option:last-child {
 		font-size: 1.65em;
 		font-weight: 400;
 		letter-spacing: 4px;
-		margin: 0 0 1.5em 0;
+		margin: 0 0 0.5em 0;
 		line-height: 1.75em;
 	}
 
@@ -1803,8 +1804,8 @@ input[type=range] + datalist option:last-child {
 		ul.divided li {
 			border-top: solid 2px #e5e5e5;
 			padding-left: 0;
-			margin: 2.5em 0 0 0;
-			padding: 2.5em 0 0 0;
+			margin: 1.5em 0 0 0;
+			padding: 0.3em 0 0 0;
 		}
 
 			ul.divided li:first-child {
@@ -2101,7 +2102,7 @@ input[type=range] + datalist option:last-child {
 	}
 
 		#header > .container {
-			padding: 14em 0 7em 0;
+			padding: 5em 0 3em 0;
 			border-bottom: solid 2px #e5e5e5;
 			box-shadow: inset 0px -8px 0px 0px #fff, inset 0px -10px 0px 0px #e5e5e5;
 		}
@@ -2290,6 +2291,7 @@ input[type=range] + datalist option:last-child {
 /* Banner */
 
 	#banner {
+		height: 0px;
 		position: relative;
 		overflow: hidden;
 		background: #fff;
@@ -2300,7 +2302,7 @@ input[type=range] + datalist option:last-child {
 		box-shadow: inset 0px -8px 0px 0px #fff, inset 0px 8px 0px 0px #fff;
 		position: relative;
 		text-transform: uppercase;
-		background: url("../static/images/banner.jpg");
+		background: url("../images/banner.jpg");
 		background-size: cover;
 		padding: 10em 0;
 	}

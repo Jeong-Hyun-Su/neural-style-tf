@@ -96,9 +96,9 @@ def neural():
     if ranges == "Low":
         ranges = 50
     elif ranges == "Medium":
-        ranges = 100
+        ranges = 350
     elif ranges == "High":
-        ranges = 150
+        ranges = 650
     else:
         ranges = int(ranges)
 
