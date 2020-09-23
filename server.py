@@ -18,6 +18,12 @@ requests_queue = Queue()
 BATCH_SIZE = 1
 CHECK_INTERVAL = 0.1
 
+if not os.path.exists("./image_input"):
+    os.makedirs("./image_input")
+if not os.path.exists("./styles"):
+    os.makedirs("./styles")
+
+
 # Queue 핸들링
 def handle_requests_by_batch():
     while True:
@@ -46,22 +52,21 @@ def run(content, style, ranges):
     # 전달받은 이미지 저장 및 변환
     content_dir = "./image_input/input.png"
     style_dir = "./styles/styles.png"
+    output_dir = "./image_output/result/result.png"
 
     content.save(content_dir)
     style.save(style_dir)
 
-    # 변환 시작
+    # 변환
     start(ranges)
+
+    output = Image.open(output_dir)
 
     # 사진 체크 후 삭제
     if os.path.isfile(content_dir):
         os.remove(content_dir)
     if os.path.isfile(style_dir):
         os.remove(style_dir)
-
-    output_dir = "./image_output/result/result.png"
-    output = Image.open(output_dir)
-
     if os.path.isfile(output_dir):
         os.remove(output_dir)
 
@@ -70,7 +75,6 @@ def run(content, style, ranges):
     byte_io.seek(0)
 
     return byte_io
-
 
 
 @app.route("/neural", methods=['POST'])
@@ -83,17 +87,7 @@ def neural():
     try:
         content = request.files['content']
         style = request.files['style']
-        ranges = request.form['range']
-
-        # Swagger API range외 선택에 대한 예
-        if ranges == "Low":
-            ranges = 100
-        elif ranges == "Medium":
-            ranges = 250
-        elif ranges == "High":
-            ranges = 400
-        else:
-            ranges = int(ranges)
+        ranges = int(request.form['range'])
 
     except Exception:
         print("error : not contain image")
@@ -108,6 +102,7 @@ def neural():
     # Queue - wait & check
     while 'output' not in req:
         time.sleep(CHECK_INTERVAL)
+
     # Get Result & Send Image
     byte_io = req['output']
 
