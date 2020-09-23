@@ -33,7 +33,7 @@ function formSend() {
 	formData.append("range", range);
 	
     fetch(
-        '/neural',
+        '/combine',
         {
             method: 'POST',
             body: formData,

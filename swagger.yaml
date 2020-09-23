@@ -18,7 +18,7 @@ servers:
   - url: https://master-neural-style-tf-jeong-hyun-su.endpoint.ainize.ai
 
 paths:
-  /neural:
+  /combine:
     post:
       requestBody:
         required: true

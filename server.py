@@ -77,8 +77,8 @@ def run(content, style, ranges):
     return byte_io
 
 
-@app.route("/neural", methods=['POST'])
-def neural():
+@app.route("/combine", methods=['POST'])
+def combine():
     # 큐에 쌓여있을 경우,
     if requests_queue.qsize() > BATCH_SIZE:
         return jsonify({'error': 'TooManyReqeusts'}), 429
