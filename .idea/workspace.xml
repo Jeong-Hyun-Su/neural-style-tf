@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0c095603-64ad-4b6e-b571-df57043731dd" name="디폴트 변경 목록" comment="">
+      <change beforePath="$PROJECT_DIR$/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/server.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JupyterTrust" id="ef7cd05a-d3a1-4444-8668-0ba12df148a6" />
+  <component name="ProjectId" id="1hnqINSRpDOY0UKIf4xLnT6LDt9" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RunManager">
+    <configuration name="neural-style-tf" type="PythonConfigurationType" factoryName="Python">
+      <module name="neural-style-tf" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/server.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0c095603-64ad-4b6e-b571-df57043731dd" name="디폴트 변경 목록" comment="" />
+      <created>1600657122961</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1600657122961</updated>
+      <workItem from="1600657124056" duration="5179000" />
+      <workItem from="1600751814432" duration="2924000" />
+      <workItem from="1600758086909" duration="65000" />
+      <workItem from="1600758152958" duration="3533000" />
+      <workItem from="1600772337204" duration="621000" />
+      <workItem from="1600822613360" duration="13611000" />
+      <workItem from="1600864414128" duration="962000" />
+      <workItem from="1600910056917" duration="647000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="226" y="-733" key="#SSH_구성" timestamp="1600753809348">
+      <screen x="0" y="-768" width="1366" height="768" />
+    </state>
+    <state x="226" y="-733" key="#SSH_구성/0.0.1440.900/0.-768.1366.768@0.-768.1366.768" timestamp="1600753694875" />
+    <state x="226" y="-733" key="#SSH_구성/0.23.1440.877/0.-768.1366.768@0.-768.1366.768" timestamp="1600753809348" />
+    <state x="466" y="-760" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1600665443356">
+      <screen x="-211" y="-1057" width="1920" height="1057" />
+    </state>
+    <state x="466" y="-760" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1440.798/-211.-1057.1920.1057@-211.-1057.1920.1057" timestamp="1600665443356" />
+    <state x="347" y="-941" key="#배포" timestamp="1600822653980">
+      <screen x="-211" y="-1080" width="1920" height="1080" />
+    </state>
+    <state x="347" y="-941" key="#배포/0.0.1440.900/-211.-1080.1920.1080@-211.-1080.1920.1080" timestamp="1600822653980" />
+    <state x="397" y="-669" key="#배포/0.0.1440.900/0.-768.1366.768@0.-768.1366.768" timestamp="1600758295859" />
+    <state x="349" y="-903" key="#배포/0.23.1440.798/-211.-1057.1920.1057@-211.-1057.1920.1057" timestamp="1600660606320" />
+    <state x="397" y="-669" key="#배포/0.23.1440.877/0.-768.1366.768@0.-768.1366.768" timestamp="1600753811220" />
+    <state x="410" y="-705" key="#옵션" timestamp="1600751950576">
+      <screen x="0" y="-768" width="1366" height="768" />
+    </state>
+    <state x="410" y="-705" key="#옵션/0.0.1440.900/0.-768.1366.768@0.-768.1366.768" timestamp="1600751950576" />
+    <state x="-111" y="-978" width="1720" height="794" key="DirDiffDialog" timestamp="1600832799468">
+      <screen x="-211" y="-1080" width="1920" height="1080" />
+    </state>
+    <state x="-111" y="-978" width="1720" height="794" key="DirDiffDialog/0.0.1440.900/-211.-1080.1920.1080@-211.-1080.1920.1080" timestamp="1600832799468" />
+    <state x="-111" y="-957" width="1720" height="777" key="DirDiffDialog/0.23.1440.798/-211.-1057.1920.1057@-211.-1057.1920.1057" timestamp="1600671309726" />
+    <state x="192" y="-745" key="SettingsEditor" timestamp="1600753777814">
+      <screen x="0" y="-768" width="1366" height="768" />
+    </state>
+    <state x="192" y="-745" key="SettingsEditor/0.0.1440.900/0.-768.1366.768@0.-768.1366.768" timestamp="1600752961994" />
+    <state x="192" y="-745" key="SettingsEditor/0.23.1440.877/0.-768.1366.768@0.-768.1366.768" timestamp="1600753777814" />
+    <state x="487" y="-520" key="com.jetbrains.plugins.remotesdk.ui.RemoteMappingsConfiguration" timestamp="1600753771802">
+      <screen x="0" y="-768" width="1366" height="768" />
+    </state>
+    <state x="487" y="-520" key="com.jetbrains.plugins.remotesdk.ui.RemoteMappingsConfiguration/0.23.1440.877/0.-768.1366.768@0.-768.1366.768" timestamp="1600753771802" />
+    <state x="371" y="-849" width="354" height="525" key="ftp.server.browser" timestamp="1600822652919">
+      <screen x="-211" y="-1080" width="1920" height="1080" />
+    </state>
+    <state x="371" y="-849" key="ftp.server.browser/0.0.1440.900/-211.-1080.1920.1080@-211.-1080.1920.1080" timestamp="1600822652919" />
+    <state x="414" y="-604" width="354" height="525" key="ftp.server.browser/0.0.1440.900/0.-768.1366.768@0.-768.1366.768" timestamp="1600752882654" />
+    <state x="656" y="-831" key="ftp.server.browser/0.23.1440.798/-211.-1057.1920.1057@-211.-1057.1920.1057" timestamp="1600660598322" />
+    <state x="414" y="-604" key="ftp.server.browser/0.23.1440.877/0.-768.1366.768@0.-768.1366.768" timestamp="1600753729323" />
+  </component>
+</project>

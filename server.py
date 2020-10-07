@@ -8,7 +8,6 @@ from io import BytesIO
 from queue import Queue, Empty
 import threading
 import time
-import cv2
 
 from neural_style import *
 # Server & Handling Setting
@@ -87,7 +86,7 @@ def combine():
     try:
         content = request.files['content']
         style = request.files['style']
-        ranges = int(request.form['range'])
+        ranges = request.form['range']
 
     except Exception:
         print("error : not contain image")

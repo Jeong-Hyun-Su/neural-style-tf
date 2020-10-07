@@ -15,7 +15,7 @@ info:
   version: "0.1"
 
 servers:
-  - url: https://master-neural-style-tf-jeong-hyun-su.endpoint.ainize.ai
+  - url: https://master-neural-style-tf-jeong-hyun-su.endpoint.ainize.ai/
 
 paths:
   /combine:
