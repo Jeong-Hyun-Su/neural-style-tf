@@ -86,7 +86,7 @@ def combine():
     try:
         content = request.files['content']
         style = request.files['style']
-        ranges = request.form['range']
+        ranges = int(request.form['range'])
 
     except Exception:
         print("error : not contain image")
